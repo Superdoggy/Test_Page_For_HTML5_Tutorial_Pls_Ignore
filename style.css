@@ -1,4 +1,4 @@
 p {
     color: blue;
-    font: Code Attack, Georgia; /*not sure if that'll work*/
+    font-family: Code Attack, Georgia; /*not sure if that'll work*/
 }
