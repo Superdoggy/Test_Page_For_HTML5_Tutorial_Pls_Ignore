@@ -1,4 +1,4 @@
 p {
     color: blue;
-    font-family: ubuntu; /*not sure if that'll work*/
+    font: ubuntu; /*not sure if that'll work*/
 }
