@@ -3,7 +3,7 @@
 	margin: 0 auto;
 	width: 480px;
 }
-#game {
+canvas {
 	background: #000000;
 }
 
@@ -11,7 +11,7 @@
 
 /*CSS RESET BELOW*/
 
-* {
+/* {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -19,4 +19,4 @@
 	font: inherit;
 	vertical-align: baseline;
 	color: red;
-}
+}*/
