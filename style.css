@@ -1,6 +1,10 @@
-p {
-    color: blue;
-    font-family: Georgia; /*not sure if that'll work*/
+#container {
+	padding-top: 50px;
+	margin: 0 auto;
+	width: 480px;
+}
+canvas {
+	background: #000000;
 }
 
 
