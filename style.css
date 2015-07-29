@@ -1,7 +1,7 @@
 #container {
 	padding-top: 50px;
 	margin: 0 auto;
-	width: 480px;
+	width: 320px;
 }
 canvas {
 	background: #000000;
@@ -11,7 +11,7 @@ canvas {
 
 /*CSS RESET BELOW*/
 
-/* {
+* {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -19,4 +19,4 @@ canvas {
 	font: inherit;
 	vertical-align: baseline;
 	color: red;
-} */
+}
