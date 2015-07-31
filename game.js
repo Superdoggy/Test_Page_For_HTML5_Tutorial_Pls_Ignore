@@ -1,5 +1,5 @@
 var pass = prompt('password?', '???');
-while(prompt != 'meep') { // I really don't care if this password is blatantly obvious but I'd like to have a little privacy whilst developing. :P
+while(pass != 'meep') { // I really don't care if this password is blatantly obvious but I'd like to have a little privacy whilst developing. :P
     pass = prompt('password?', '???')   
 }
 }
