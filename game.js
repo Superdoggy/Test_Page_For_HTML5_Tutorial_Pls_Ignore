@@ -1,6 +1,6 @@
-var pass = prompt('password?');
+var pass = prompt('password?', '???');
 while(prompt != 'meep') { // I really don't care if this password is blatantly obvious but I'd like to have a little privacy whilst developing. :P
-    pass = prompt('password?')   
+    pass = prompt('password?', '???')   
 }
 }
 var canvas = document.getElementById('game');
