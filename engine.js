@@ -8,6 +8,9 @@ var Sprites = new function() {
   };
   this.draw = function(canvascontext, spriteID, xpos, ypos, frameN) {
     var spriteInfo = this.map[spriteID];
+    if (!spriteInfo) {
+      window.alert('uhoh');
+    }
     if (!frameN) {
      frameN = 0; 
     }
