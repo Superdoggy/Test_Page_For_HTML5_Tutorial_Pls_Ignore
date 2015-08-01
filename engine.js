@@ -1,5 +1,5 @@
 var Sprites = new function() {
-  this.map = {};
+  this.map = { };
   this.load = function(spriteData, callback) {
     this.map = spriteData;
     this.image = new Image();
