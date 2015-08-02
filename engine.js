@@ -1,6 +1,6 @@
 var Game = new function() {
   this.initialize = function(spritedata, callback) {
-    this.canvas = document.getElementByID('game');
+    this.canvas = document.getElementById('game');
     this.width = this.canvas.width;
     this.height = this.canvas.height;
     
