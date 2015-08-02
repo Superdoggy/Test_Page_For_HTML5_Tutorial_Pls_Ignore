@@ -12,14 +12,26 @@ var Game = new function() {
     this.loop();
     Sprites.load(spritedata, callback);
   }
+  var keycodes = {37: 'left', 39: 'right', 32: 'space'};
+  this.keys = {};
   this.setupInput = function() {
-    
+    window.addEventListener('keydown', function(e) {
+      if(keycodes[event.keyCode]) {
+        Game.keys[keycodes[event.keyCode]] = true;
+        e.preventDefault();
+      }
+    });
+    window.addEventListener('keyup', function(e) {
+      if(keycodes[event.keyCode]) {
+        Game.keys[keycodes[event.keyCode]] = false;
+        e.preventDefault();
+      }
+    })
   }
   this.loop = function() {
     
   }
 }
-
 var Sprites = new function() {
   this.map = { };
   this.load = function(spriteData, callback) {
