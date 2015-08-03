@@ -16,7 +16,7 @@ var Starfield = new function() {
   this.step = function(time) {
     var c = stars.length;
     for(var i = 0; i < c; i++) {
-      stars[i].Y += stars[i].size * time;
+      stars[i].Y += stars[i].size * time * 20;
       if(stars[i].Y > starcanvas.height) {
         var randomX = Math.floor(Math.random() * starcanvas.width);
         var randomS = Math.floor(Math.random() * 2 + 0.5);
