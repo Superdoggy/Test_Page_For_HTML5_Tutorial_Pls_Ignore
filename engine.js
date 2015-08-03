@@ -25,7 +25,7 @@ var Starfield = new function() {
       }
     }
   }
-  this.draw = function() {
+  this.draw = function(ctx) {
     this.starcanvascontext.fillStyle = "#000";
     this.starcanvascontext.fillRect(0, 0, this.starcanvas.width, this.starcanvas.height);
     var c = this.stars.length;
@@ -34,6 +34,7 @@ var Starfield = new function() {
       this.starcanvascontext.globalAlpha = this.stars[i].alpha;
       this.starcanvascontext.fillRect(this.stars[i].X, this.stars[i].Y, this.stars[i].size, this.stars[i].size);
     }
+    ctx.drawImage(stars, 0, 0);
   }
 }
 function Star(size, initX, initY, alpha) {
