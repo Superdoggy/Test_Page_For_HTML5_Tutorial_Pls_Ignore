@@ -4,19 +4,42 @@ var Starfield = new function() {
     this.starcanvas = document.createElement('canvas');
     this.starcanvas.width = Game.width;
     this.starcanvas.height = Game.height;
+    this.starcanvascontext = starcanvas.getContext('2d');
     for(var i = 0; i < 250; i++) {
-      var randomX = math.floor(math.random() * starcanvas.width);
-      var randomY = math.floor(math.random() * starcanvas.height);
+      var randomX = math.floor(math.random() * this.starcanvas.width);
+      var randomY = math.floor(math.random() * this.starcanvas.height);
       var randomS = math.random() * 2 + 0.5;
       var alpha = randomS * 40 / 100;
       this.stars[i] = new Star(randomS, randomX, randomY, alpha);
     }
   }
+  this.step = function(time) {
+    var c = this.stars.length;
+    for(var i = 0; i < c; i++) {
+      this.stars[i].Y += this.stars[i].size * time;
+      if(this.stars[i].Y > this.starcanvas.height) {
+        var randomX = math.floor(math.random() * this.starcanvas.width);
+        var randomS = math.random() * 2 + 0.5;
+        var alpha = randomS * 40 / 100;
+        this.stars[i] = new Star(randomS, randomX, 0, alpha);
+      }
+    }
+  }
+  this.draw = function() {
+    this.starcanvascontext.fillStyle = "#000";
+    this.starcanvascontext.fillRect(0, 0, this.starcanvas.width, this.starcanvas.height);
+    var c = this.stars.length;
+    this.starcanvascontext.fillStyle = "#FFF";
+    for(var i = 0; i < c; i++) {
+      this.starcanvascontext.globalAlpha = this.stars[i].alpha;
+      this.starcanvascontext.fillRect(this.stars[i].X, this.stars[i].Y, this.stars[i].size, this.stars[i].size);
+    }
+  }
 }
 function Star(size, initX, initY, alpha) {
   this.size = size;
-  this.initX = initX;
-  this.initY = initY;
+  this.X = initX;
+  this.Y = initY;
   this.alpha = alpha;
 }
 
