@@ -7,6 +7,7 @@ var sprites = {
 };
 var gameStart = function() {
   Sprites.load(sprites, function() {Sprites.draw("player", 0, 0);});
+  Starfield.initialize();
   Game.setSprite(0, Starfield);
 }
 Game.initialize(sprites, gameStart);
