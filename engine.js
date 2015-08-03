@@ -4,7 +4,7 @@ var Game = new function() {
     this.width = this.canvas.width;
     this.height = this.canvas.height;
     
-    this.canvascontext = this.canvas.getContext && canvas.getContext('2d');
+    this.canvascontext = this.canvas.getContext && this.canvas.getContext('2d');
     if(!canvascontext) {
       return alert('ye useless browser cannot render canvas');
     }
