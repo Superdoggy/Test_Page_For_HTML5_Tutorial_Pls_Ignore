@@ -8,7 +8,7 @@ var Starfield = new function() {
     for(var i = 0; i < 250; i++) {
       var randomX = Math.floor(Math.random() * starcanvas.width);
       var randomY = Math.floor(Math.random() * starcanvas.height);
-      var randomS = Math.floor(Math.random() * 2 + 0.5);
+      var randomS = Math.random() * 3 + 0.5;
       var alpha = randomS * 40 / 100;
       stars[i] = new Star(randomS, randomX, randomY, alpha);
     }
@@ -16,16 +16,17 @@ var Starfield = new function() {
   this.step = function(time) {
     var c = stars.length;
     for(var i = 0; i < c; i++) {
-      stars[i].Y += stars[i].size * time * 20;
+      stars[i].Y += stars[i].size * time * 30;
       if(stars[i].Y > starcanvas.height) {
         var randomX = Math.floor(Math.random() * starcanvas.width);
-        var randomS = Math.floor(Math.random() * 2 + 0.5);
+        var randomS = Math.random() * 3 + 0.5;
         var alpha = randomS * 40 / 100;
         stars[i] = new Star(randomS, randomX, 0, alpha);
       }
     }
   }
   this.draw = function(ctx) {
+    starcanvascontext.globalAlpha = 0.7;
     starcanvascontext.fillStyle = "#000";
     starcanvascontext.fillRect(0, 0, starcanvas.width, starcanvas.height);
     var c = stars.length;
