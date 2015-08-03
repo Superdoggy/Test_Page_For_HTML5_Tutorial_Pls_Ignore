@@ -26,7 +26,7 @@ var Starfield = new function() {
     }
   }
   this.draw = function(ctx) {
-    starcanvascontext.globalAlpha = 0.6;
+    starcanvascontext.globalAlpha = 0.5;
     starcanvascontext.fillStyle = "#000";
     starcanvascontext.fillRect(0, 0, starcanvas.width, starcanvas.height);
     var c = stars.length;
