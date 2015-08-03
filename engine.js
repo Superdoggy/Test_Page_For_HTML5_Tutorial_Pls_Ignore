@@ -28,8 +28,15 @@ var Game = new function() {
       }
     })
   }
+  var boards = [];
   this.loop = function() {
-    
+    var time = 30;
+    for (var i = 0; i < boards.length; i++) {
+      if(boards[i]) {
+        boards[i].step(time / 1000);
+        boards[i] && boards[i].draw(Game.canvascontext);
+      }
+    }
   }
 }
 var Sprites = new function() {
