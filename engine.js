@@ -26,7 +26,7 @@ var Game = new function() {
         Game.keys[keycodes[e.keyCode]] = false;
         e.preventDefault();
       }
-    })
+    });
   }
   var boards = [];
   this.loop = function() {
@@ -37,7 +37,11 @@ var Game = new function() {
         boards[i] && boards[i].draw(Game.canvascontext);
       }
     }
-  }
+    setTimeout(Game.loop, time);
+  };
+  this.setSprite = function(i, sprite) {
+    boards[i] = sprite;
+  };
 }
 var Sprites = new function() {
   this.map = { };
