@@ -6,9 +6,9 @@ var Starfield = new function() {
     starcanvas.width = Game.width;
     starcanvas.height = Game.height;
     for(var i = 0; i < 250; i++) {
-      var randomX = math.floor(math.random() * starcanvas.width);
-      var randomY = math.floor(math.random() * starcanvas.height);
-      var randomS = math.floor(math.random() * 2 + 0.5);
+      var randomX = Math.floor(Math.random() * starcanvas.width);
+      var randomY = Math.floor(Math.random() * starcanvas.height);
+      var randomS = Math.floor(Math.random() * 2 + 0.5);
       var alpha = randomS * 40 / 100;
       stars[i] = new Star(randomS, randomX, randomY, alpha);
     }
@@ -18,8 +18,8 @@ var Starfield = new function() {
     for(var i = 0; i < c; i++) {
       stars[i].Y += stars[i].size * time;
       if(stars[i].Y > starcanvas.height) {
-        var randomX = math.floor(math.random() * starcanvas.width);
-        var randomS = math.floor(math.random() * 2 + 0.5);
+        var randomX = Math.floor(Math.random() * starcanvas.width);
+        var randomS = Math.floor(Math.random() * 2 + 0.5);
         var alpha = randomS * 40 / 100;
         stars[i] = new Star(randomS, randomX, 0, alpha);
       }
