@@ -1,3 +1,28 @@
+var Starfield = new function() {
+  this.initialize = function() {
+    this.stars = [];
+    this.starcanvas = document.createElement('canvas');
+    this.starcanvas.width = Game.width;
+    this.starcanvas.height = Game.height;
+    for(var i = 0; i < 250; i++) {
+      var randomX = math.floor(math.random() * starcanvas.width);
+      var randomY = math.floor(math.random() * starcanvas.height);
+      var randomS = math.random() * 2 + 0.5;
+      var alpha = randomS * 40 / 100;
+      this.stars[i] = new Star(randomS, randomX, randomY, alpha);
+    }
+  }
+}
+function Star(size, initX, initY, alpha) {
+  this.size = size;
+  this.initX = initX;
+  this.initY = initY;
+  this.alpha = alpha;
+}
+
+
+
+
 var Game = new function() {
   this.initialize = function(spritedata, callback) {
     this.canvas = document.getElementById('game');
