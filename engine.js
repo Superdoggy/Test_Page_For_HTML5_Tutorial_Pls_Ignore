@@ -16,14 +16,14 @@ var Game = new function() {
   this.keys = {};
   this.setupInput = function() {
     window.addEventListener('keydown', function(e) {
-      if(keycodes[event.keyCode]) {
-        Game.keys[keycodes[event.keyCode]] = true;
+      if(keycodes[e.keyCode]) {
+        Game.keys[keycodes[e.keyCode]] = true;
         e.preventDefault();
       }
     });
     window.addEventListener('keyup', function(e) {
-      if(keycodes[event.keyCode]) {
-        Game.keys[keycodes[event.keyCode]] = false;
+      if(keycodes[e.keyCode]) {
+        Game.keys[keycodes[e.keyCode]] = false;
         e.preventDefault();
       }
     })
