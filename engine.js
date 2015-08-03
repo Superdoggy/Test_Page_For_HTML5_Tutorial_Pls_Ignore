@@ -27,12 +27,12 @@ var Starfield = new function() {
   }
   this.draw = function(ctx) {
     starcanvascontext.fillStyle = "#000";
-    //starcanvascontext.fillRect(0, 0, starcanvas.width, starcanvas.height);
+    starcanvascontext.fillRect(0, 0, starcanvas.width, starcanvas.height);
     var c = stars.length;
     starcanvascontext.fillStyle = "#FFF";
     for(var i = 0; i < c; i++) {
       starcanvascontext.globalAlpha = stars[i].alpha;
-      starcanvascontext.fillRect(stars[i].X, stars[i].Y, stars[i].size, stars[i].size);
+      starcanvascontext.fillRect(stars[i].X, stars[i].Y, stars[i].size * 50, stars[i].size * 50);
     }
     ctx.drawImage(starcanvas, 0, 0);
   }
