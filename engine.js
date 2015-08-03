@@ -32,8 +32,8 @@ var Starfield = new function() {
     starcanvascontext.fillStyle = "#FFF";
     for(var i = 0; i < c; i++) {
       starcanvascontext.globalAlpha = stars[i].alpha;
-      console.log(stars[i].X);
-      console.log(stars[i].Y);
+      window.alert(stars[i].X);
+      window.alert(stars[i].Y);
       starcanvascontext.fillRect(stars[i].X, stars[i].Y, stars[i].size, stars[i].size);
     }
     ctx.drawImage(starcanvas, 0, 0);
