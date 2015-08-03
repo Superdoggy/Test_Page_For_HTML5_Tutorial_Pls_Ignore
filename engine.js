@@ -8,7 +8,7 @@ var Starfield = new function() {
     for(var i = 0; i < 250; i++) {
       var randomX = math.floor(math.random() * starcanvas.width);
       var randomY = math.floor(math.random() * starcanvas.height);
-      var randomS = math.random() * 2 + 0.5;
+      var randomS = math.floor(math.random() * 2 + 0.5);
       var alpha = randomS * 40 / 100;
       stars[i] = new Star(randomS, randomX, randomY, alpha);
     }
@@ -19,7 +19,7 @@ var Starfield = new function() {
       stars[i].Y += stars[i].size * time;
       if(stars[i].Y > starcanvas.height) {
         var randomX = math.floor(math.random() * starcanvas.width);
-        var randomS = math.random() * 2 + 0.5;
+        var randomS = math.floor(math.random() * 2 + 0.5);
         var alpha = randomS * 40 / 100;
         stars[i] = new Star(randomS, randomX, 0, alpha);
       }
@@ -27,11 +27,11 @@ var Starfield = new function() {
   }
   this.draw = function(ctx) {
     starcanvascontext.fillStyle = "#000";
-    starcanvascontext.fillRect(0, 0, starcanvas.width, starcanvas.height);
+    //starcanvascontext.fillRect(0, 0, starcanvas.width, starcanvas.height);
     var c = stars.length;
     starcanvascontext.fillStyle = "#FFF";
     for(var i = 0; i < c; i++) {
-      //starcanvascontext.globalAlpha = stars[i].alpha;
+      starcanvascontext.globalAlpha = stars[i].alpha;
       starcanvascontext.fillRect(stars[i].X, stars[i].Y, stars[i].size, stars[i].size);
     }
     ctx.drawImage(starcanvas, 0, 0);
