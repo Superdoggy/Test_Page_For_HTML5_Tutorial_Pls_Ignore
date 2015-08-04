@@ -93,7 +93,7 @@ var Game = new function() {
     boards[i] = sprite;
   };
 }
-var Sprites = new function() {
+var Sprites = function() {
   this.map = { };
   this.load = function(spriteData, callback) {
     this.map = spriteData;
@@ -103,9 +103,6 @@ var Sprites = new function() {
   };
   this.draw = function(spriteID, xpos, ypos, frameN) {
     var s = this.map[spriteID];
-    if (!s) {
-      window.alert('uhoh');
-    }
     if (!frameN) {
      frameN = 0; 
     }
