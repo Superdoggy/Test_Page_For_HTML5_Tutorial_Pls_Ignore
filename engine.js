@@ -108,6 +108,7 @@ var Sprites = new function() {
     }
     Game.canvascontext.drawImage(this.image, s.sx + frameN * s.w, s.sy, s.w, s.h, xpos, ypos, s.w, s.h);
   };
+  return this;
 }
 function TitleScreen(title, subtitle, callback) {
   this.step = function(dtime) {
