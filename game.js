@@ -6,12 +6,13 @@ var sprites = {
   player: {sx: 0, sy: 0, w: 37, h: 42}
 };
 var gameStart = function() {
-  Sprites.load(sprites, function() {Sprites.draw("player", 0, 0);});
   Starfield.initialize();
   Game.setSprite(0, Starfield);
   Game.setSprite(1, new TitleScreen("Alien Invasion", "Press space to start playing", playGame));
 }
-Game.initialize(sprites, gameStart);
+window.addEventListener('load', function() {
+  Game.initialize(sprites, gameStart);
+});
 var playGame = function() {
   Game.setSprite(1, new TitleScreen("Alien Invasion", "Started"));
 }
