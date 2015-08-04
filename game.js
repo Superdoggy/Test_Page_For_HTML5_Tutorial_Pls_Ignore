@@ -18,6 +18,7 @@ var playGame = function() {
   Game.setSprite(1, new TitleScreen("Alien Invasion", "Started"));
 }
 var player = function() {
+  window.alert(sprites);
   this.w = 18;
   this.h = 35;
   this.x = Game.width / 2 - this.w / 2;
