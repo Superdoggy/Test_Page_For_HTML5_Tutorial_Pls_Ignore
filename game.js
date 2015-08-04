@@ -9,13 +9,13 @@ var gameStart = function() {
   Starfield.initialize();
   Game.setSprite(0, Starfield);
   Game.setSprite(1, new TitleScreen("Alien Invasion", "Press space to start playing", playGame));
-  Game.setSprite(2, new player());
 }
 window.addEventListener('load', function() {
   Game.initialize(sprites, gameStart);
 });
 var playGame = function() {
   Game.setSprite(1, new TitleScreen("Alien Invasion", "Started"));
+  Game.setSprite(2, new player());
 }
 var player = function() {
   this.w = 18;
