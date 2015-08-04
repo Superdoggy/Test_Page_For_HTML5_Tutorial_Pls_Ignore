@@ -112,3 +112,18 @@ var Sprites = new function() {
     Game.canvascontext.drawImage(this.image, s.sx + frameN * s.w, s.sy, s.w, s.h, xpos, ypos, s.w, s.h);
   };
 }
+function TitleScreen(title, subtitle, callback) {
+  this.step = function(dtime) {
+    if(Game.keys['space'] && callback) {
+      callback();
+    }
+  }
+  this.draw = function(canvascontext) {
+    canvascontext.fillStyle = "#FFF";
+    canvascontext.textAlign = "center";
+    canvascontext.font = "bold 40px Press Start 2P";
+    canvascontext.fillText(title, Game.width/2, Game.height/2);
+    canvascontext.font = "bold 20px Press Start 2P";
+    canvascontext.fillText(subtitle, Game.width/2, Game.height/2 + 40);
+  }
+}
