@@ -103,6 +103,7 @@ var Sprites = new function() {
   };
   this.draw = function(spriteID, xpos, ypos, frameN) {
     var s = Sprites.map[spriteID];
+    window.alert(s);
     if (!frameN) {
      frameN = 0; 
     }
