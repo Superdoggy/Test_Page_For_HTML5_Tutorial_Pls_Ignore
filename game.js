@@ -31,7 +31,7 @@ var player = function() {
       this.vx -= 1;
     }
     this.vx *= 0.9;
-    this.x += vx;
+    this.x += this.vx;
     if(this.x < 0) {
       this.x = 0;
     }
