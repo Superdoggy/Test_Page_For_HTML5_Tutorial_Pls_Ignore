@@ -104,6 +104,9 @@ var Sprites = new function() {
   this.draw = function(spriteID, xpos, ypos, frameN) {
     var s = Sprites.map[spriteID];
     window.alert(s);
+    if(1) {
+      
+    }
     if (!frameN) {
      frameN = 0; 
     }
