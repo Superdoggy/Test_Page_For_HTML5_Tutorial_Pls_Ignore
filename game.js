@@ -9,5 +9,9 @@ var gameStart = function() {
   Sprites.load(sprites, function() {Sprites.draw("player", 0, 0);});
   Starfield.initialize();
   Game.setSprite(0, Starfield);
+  Game.setSprite(1, new TitleScreen("Alien Invasion", "Press space to start playing", playGame));
 }
 Game.initialize(sprites, gameStart);
+var playGame = function() {
+  Game.setSprite(1, new TitleScreen("Alien Invasion", "Started"));
+}
