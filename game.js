@@ -14,7 +14,7 @@ window.addEventListener('load', function() {
   Game.initialize(sprites, gameStart);
 });
 var playGame = function() {
-  window.alert(Sprites.map['player']);
+  window.alert(Sprites.map['player'].w);
   Game.setSprite(1, new TitleScreen("Alien Invasion", "Started"));
   Game.setSprite(2, new player());
 }
