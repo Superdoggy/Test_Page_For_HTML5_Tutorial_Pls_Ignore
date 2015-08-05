@@ -93,7 +93,7 @@ var Game = new function() {
     boards[i] = sprite;
   };
 }
-var Sprites = new function() {
+var SpriteSheet = function() {
   this.map = { };
   this.load = function(spriteData, callback) {
     this.map = spriteData;
@@ -102,13 +102,13 @@ var Sprites = new function() {
     this.image.src = 'https://cloud.githubusercontent.com/assets/13082525/9018290/9c490a28-37ab-11e5-8c6f-71568956a3c3.png';
   };
   this.draw = function(spriteID, xpos, ypos, frameN) {
-    this.s = this.map[spriteID];
+    var s = this.map[spriteID];
     if (!frameN) {
      frameN = 0; 
     }
-    Game.canvascontext.drawImage(this.image, this.s.sx + frameN * this.s.w, this.s.sy, this.s.w, this.s.h, xpos, ypos, this.s.w, this.s.h);
+    Game.canvascontext.drawImage(this.image, s.sx + frameN * s.w, s.sy, s.w, s.h, xpos, ypos, s.w, s.h);
   };
-}
+};
 function TitleScreen(title, subtitle, callback) {
   this.step = function(dtime) {
     if(Game.keys['space'] && callback) {
