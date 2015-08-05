@@ -5,14 +5,12 @@ while(pass != 'meep') { // I really don't care if this password is blatantly obv
 var sprites = {
   player: {sx: 0, sy: 0, w: 37, h: 42}
 };
-var Sprites;
 var gameStart = function() {
   Starfield.initialize();
   Game.setSprite(0, Starfield);
   Game.setSprite(1, new TitleScreen("Alien Invasion", "Press space to start playing", playGame));
 }
 window.addEventListener('load', function() {
-  Sprites = new SpriteSheet();
   Game.initialize(sprites, gameStart);
 });
 var playGame = function() {
@@ -42,6 +40,6 @@ var player = function() {
     }
   }
   this.draw = function(canvascontext) {
-    Sprites.draw(canvascontext, 'player', this.x, this.y);
+    Sprites.draw('player', this.x, this.y);
   }
 }
