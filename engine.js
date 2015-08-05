@@ -127,3 +127,28 @@ function TitleScreen(title, subtitle, callback) {
     canvascontext.fillText(subtitle, Game.width/2, Game.height/2 + 40);
   }
 }
+var Gameboard = function() {
+  var board = this; //???
+  this.objects = [];
+  this.count = [];
+  this.add = function(obj) {
+    obj.board = this;
+    this.objects.push(obj);
+    this.count[obj.type] = (this.cnt[obj.type] || 0) + 1;
+  }
+  this.remove = function(obj) {
+    if(this.removed.indexOf(obj) != -1) {
+      this.removed.push(obj);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+//nobody likes working right at the bottom of the page... :P or at least I don't. xD
