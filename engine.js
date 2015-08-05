@@ -1,6 +1,6 @@
 var Starfield = new function() {
   var stars = [];
-  var starcanvas = document.createElement('canvas');
+  var starcanvas = document.getElementById('background');
   var starcanvascontext = starcanvas.getContext('2d');
   this.initialize = function() {
     starcanvas.width = Game.width;
@@ -38,7 +38,6 @@ var Starfield = new function() {
     for(var i = 0; i < c; i++) {
       starcanvascontext.fillRect(stars[i].X, stars[i].Y, stars[i].size, stars[i].size);
     }
-    ctx.drawImage(starcanvas, 0, 0);
   }
 }
 function Star(size, initX, initY, alpha) {
@@ -136,10 +135,16 @@ var Gameboard = function() {
     this.objects.push(obj);
     this.count[obj.type] = (this.cnt[obj.type] || 0) + 1;
   }
-  this.remove = function(obj) {
+  this.removeSelect = function(obj) {
     if(this.removed.indexOf(obj) != -1) {
       this.removed.push(obj);
     }
+  }
+  this.resetRemoved = function() {
+    this.removed = [];
+  }
+  this.removeObjects = function() {
+    
   }
 }
 
