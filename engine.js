@@ -148,7 +148,9 @@ var Gameboard = function() {
     this.removed = [];
   }
   this.removeObjects = function() {
-    
+    for(var i = 0; i < this.removed.length; i++) {
+      
+    }
   }
 }
 
