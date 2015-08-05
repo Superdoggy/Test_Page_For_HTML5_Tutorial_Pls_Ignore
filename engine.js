@@ -103,9 +103,9 @@ var Sprites = new function() {
   };
   this.draw = function(spriteID, xpos, ypos, frameN) {
     var s = this.map[spriteID];
-    if (!frameN) {
-     frameN = 0; 
-    }
+    //if (!frameN) {
+     //frameN = 0; 
+    //}
     Game.canvascontext.drawImage(this.image, s.sx + frameN * s.w, s.sy, s.w, s.h, xpos, ypos, s.w, s.h);
   };
 }
