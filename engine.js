@@ -101,11 +101,12 @@ var Sprites = new function() {
     this.image.onload = callback;
     this.image.src = 'https://cloud.githubusercontent.com/assets/13082525/9018290/9c490a28-37ab-11e5-8c6f-71568956a3c3.png';
   };
-  var s = this.map[spriteID];
+  var s;
   this.draw = function(spriteID, xpos, ypos, frameN) {
-    //if (!frameN) {
-     //frameN = 0; 
-    //}
+    s = this.map[spriteID];
+    if (!frameN) {
+     frameN = 0; 
+    }
     Game.canvascontext.drawImage(this.image, s.sx + frameN * s.w, s.sy, s.w, s.h, xpos, ypos, s.w, s.h);
   };
 }
