@@ -21,7 +21,10 @@ var Starfield = new function() {
         var randomX = Math.floor(Math.random() * starcanvas.width);
         var randomS = Math.random() * 3 + 0.5;
         var alpha = randomS * 40 / 100;
-        stars[i] = new Star(randomS, randomX, 0, alpha);
+        stars[i].X = randomX;
+        stars[i].Y = 0;
+        stars[i].alpha = alpha;
+        stars[i].size = randomS;
       }
     }
   }
