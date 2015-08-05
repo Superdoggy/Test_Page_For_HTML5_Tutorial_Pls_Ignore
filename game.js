@@ -7,12 +7,12 @@ var sprites = {
 };
 var Sprites;
 var gameStart = function() {
-  Sprites = new SpriteSheet();
   Starfield.initialize();
   Game.setSprite(0, Starfield);
   Game.setSprite(1, new TitleScreen("Alien Invasion", "Press space to start playing", playGame));
 }
 window.addEventListener('load', function() {
+  Sprites = new SpriteSheet();
   Game.initialize(sprites, gameStart);
 });
 var playGame = function() {
