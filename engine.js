@@ -82,6 +82,7 @@ var Game = new function() {
   }
   var boards = [];
   this.loop = function() {
+    Sprites.clear();
     var time = 30;
     for (var i = 0; i < boards.length; i++) {
       if(boards[i]) {
