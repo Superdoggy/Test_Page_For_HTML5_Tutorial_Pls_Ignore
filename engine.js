@@ -93,7 +93,7 @@ var Game = new function() {
     boards[i] = sprite;
   };
 }
-var SpriteSheet = function() {
+var Sprites = new function() {
   this.map = { };
   this.load = function(spriteData, callback) {
     this.map = spriteData;
@@ -102,8 +102,7 @@ var SpriteSheet = function() {
     this.image.src = 'https://cloud.githubusercontent.com/assets/13082525/9018290/9c490a28-37ab-11e5-8c6f-71568956a3c3.png';
   };
   this.draw = function(spriteID, xpos, ypos, frameN) {
-    window.alert(Sprites.map[spriteID].w);
-    var s = Sprites.map[spriteID];
+    var s = this.map[spriteID];
     if (!frameN) {
      frameN = 0; 
     }
