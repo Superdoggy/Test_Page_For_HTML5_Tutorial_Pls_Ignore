@@ -149,7 +149,14 @@ var Gameboard = function() {
   }
   this.removeObjects = function() {
     for(var i = 0; i < this.removed.length; i++) {
-      
+      var index = this.objects.indexOf(this.removed[i]);
+      if(index != -1) {
+        this.count[this.removed[i].type]--;
+        if(this.count[this.removed[i].type] == 0) {
+          this.count.splice(this.count.indexOf(this.removed[i].type), 1);
+        }
+        this.objects.splice(index, 1);
+      }
     }
   }
 }
