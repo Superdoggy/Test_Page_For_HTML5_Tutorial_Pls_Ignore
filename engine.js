@@ -166,6 +166,14 @@ var Gameboard = function() {
       obj[functionname].apply(obj, args);
     }
   }
+  this.detect = function(func) {
+    for(var i = 0, val = null; i < this.objects.length; i++) {
+      if(func.call(this.objects[i])) {
+        return this.objects[i];
+      }
+    }
+    return false;
+  }
   this.step = function(dtime) {
     this.resetRemoved();
     this.iterate('step', dtime);
@@ -173,6 +181,17 @@ var Gameboard = function() {
   }
   this.draw = function(canvascontext) {
     this.iterate('draw', canvascontext);
+  }
+  this.overlap = function(obj1, obj2) {
+    return ((obj1.x < obj2.x + obj2.w) && (obj1.x + obj1.w > obj2.x) && (obj1.y < obj2.y + obj2.h) && obj1.y + obj1.h > ob2.y);
+  }
+  this.collide = function(obj, type) {
+    return this.detect(function() {
+      if(obj != this) {
+        var collision = (!type || this.type & type) && board.overlap(obj, this); //seriously, bitwise operators? xD
+        return col ? this : false;
+      }
+    });
   }
 }
 
