@@ -159,6 +159,21 @@ var Gameboard = function() {
       }
     }
   }
+  this.iterate = function(functionname) {
+    var args = Array.prototype.slice.call(arguments, 1);
+    for (var i = 0; i<this.objects.length; i++) {
+      var obj = this.objects[i];
+      obj[functionname].apply(obj, args);
+    }
+  }
+  this.step = function(dtime) {
+    this.resetRemoved();
+    this.iterate('step', dtime);
+    this.removeObjects();
+  }
+  this.draw = function(canvascontext) {
+    this.iterate('draw', canvascontext);
+  }
 }
 
 
