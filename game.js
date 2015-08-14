@@ -3,7 +3,7 @@ while(pass != 'meep') { // I really don't care if this password is blatantly obv
   pass = prompt('password?', '???');
 }
 var sprites = {
-  player: {sx: 0, sy: 0, w: 18, h: 35}
+  player: {sx: 0, sy: 0, w: 37, h: 42}
 };
 var gameStart = function() {
   Starfield.initialize();
