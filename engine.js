@@ -137,6 +137,9 @@ var Gameboard = function() {
   this.add = function(obj) {
     obj.board = this;
     this.objects.push(obj);
+    if(!obj.type) {
+      obj.type = 42;
+    }
     this.count[obj.type] = (this.cnt[obj.type] || 0) + 1;
   }
   this.removeSelect = function(obj) {
