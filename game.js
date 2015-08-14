@@ -2,6 +2,11 @@ var pass = prompt('password?', '???');
 while(pass != 'meep') { // I really don't care if this password is blatantly obvious but I'd like to have a little privacy whilst developing. :P
   pass = prompt('password?', '???');
 }
+var Playertype = 1;
+var Playerprojectiletype = 2;
+var Enemytype = 4;
+var Enemyprojectiletype = 8;
+var Poweruptype = 16;
 var sprites = {
   player: {sx: 0, sy: 0, w: 37, h: 42},
   missile: {sx: 0, sy: 30, w: 2, h: 10}
@@ -56,6 +61,7 @@ var player = function() {
     Sprites.draw('player', this.x, this.y);
   }
 }
+player.prototype.type = Playertype;
 var playermissile = function(x, y) {
   this.w = Sprites.map['missile'].w;
   this.h = Sprites.map['missile'].h;
@@ -66,12 +72,13 @@ var playermissile = function(x, y) {
 playermissile.prototype.step = function(dtime) {
   this.y += this.vy;
   if(this.y < -this.h) {
-    this.board.remove(this);
+    this.board.removeSelect(this);
   }
 }
 playermissile.prototype.draw = function(canvascontext) {
   Sprites.draw('missile', this.x, this.y);
 }
+playermissile.prototype.type = Playerprojectiletype;
 
 
 
