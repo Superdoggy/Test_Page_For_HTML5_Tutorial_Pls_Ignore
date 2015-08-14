@@ -3,7 +3,7 @@ while(pass != 'meep') { // I really don't care if this password is blatantly obv
   pass = prompt('password?', '???');
 }
 var sprites = {
-  player: {sx: 0, sy: 0, w: 37, h: 42}
+  player: {sx: 0, sy: 0, w: 18, h: 35}
 };
 var gameStart = function() {
   Starfield.initialize();
@@ -18,10 +18,10 @@ var playGame = function() {
   Game.setSprite(2, new player());
 }
 var player = function() {
-  this.w = Sprites.map['player'].w / 2;
-  this.h = Sprites.map['player'].h / 2;
+  this.w = Sprites.map['player'].w;
+  this.h = Sprites.map['player'].h;
   this.x = Game.width / 2 - this.w / 2;
-  this.y = Game.height - 10 - this.h * 2;
+  this.y = Game.height - 10 - this.h;
   this.vx = 0;
   this.step = function(dtime) {
     if(Game.keys['right']) {
@@ -35,8 +35,8 @@ var player = function() {
     if(this.x < 0) {
       this.x = 0;
     }
-    if(this.x > Game.width - this.w * 2) {
-      this.x = Game.width - this.w * 2;
+    if(this.x > Game.width - this.w) {
+      this.x = Game.width - this.w;
       this.vx = 0;
     }
   }
