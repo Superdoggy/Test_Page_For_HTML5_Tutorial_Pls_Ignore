@@ -140,7 +140,7 @@ var Gameboard = function() {
     if(!obj.type) {
       obj.type = 42;
     }
-    this.count[obj.type] = (this.cnt[obj.type] || 0) + 1;
+    this.count[obj.type] = (this.count[obj.type] || 0) + 1;
   }
   this.removeSelect = function(obj) {
     if(this.removed.indexOf(obj) != -1) {
