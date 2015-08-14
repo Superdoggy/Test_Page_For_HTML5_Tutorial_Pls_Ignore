@@ -70,7 +70,7 @@ playermissile.prototype.step = function(dtime) {
   }
 }
 playermissile.prototype.draw = function(canvascontext) {
-  Sprites.draw(canvascontext, 'missile', this.x, this.y);
+  Sprites.draw('missile', this.x, this.y);
 }
 
 
