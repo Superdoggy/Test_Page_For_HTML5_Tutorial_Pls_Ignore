@@ -67,7 +67,7 @@ var playermissile = function(x, y) {
   this.h = Sprites.map['missile'].h;
   this.x = x - this.w / 2; //srsly that makes a 1px difference xD
   this.y = y - this.h;
-  this.vy = -5;
+  this.vy = -20;
 }
 playermissile.prototype.step = function(dtime) {
   this.y += this.vy;
