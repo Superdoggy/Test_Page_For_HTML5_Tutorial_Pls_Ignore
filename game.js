@@ -3,7 +3,7 @@ while(pass != 'meep') { // I really don't care if this password is blatantly obv
   pass = prompt('password?', '???');
 }
 var sprites = {
-  player: {sx: 0, sy: 0, w: 37, h: 42}
+  player: {sx: 0, sy: 0, w: 37, h: 42},
   missile: {sx: 0, sy: 30, w: 2, h: 10}
 };
 var gameStart = function() {
