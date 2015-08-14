@@ -102,7 +102,7 @@ var Sprites = new function() {
     this.map = spriteData;
     this.image = new Image();
     this.image.onload = callback;
-    this.image.src = 'https://cloud.githubusercontent.com/assets/13082525/9018290/9c490a28-37ab-11e5-8c6f-71568956a3c3.png';
+    this.image.src = 'https://github.com/cykod/AlienInvasion/blob/master/images/sprites.png?raw=true';
   };
   this.clear = function() {
     Game.canvascontext.clearRect(0, 0, Game.width, Game.height);
