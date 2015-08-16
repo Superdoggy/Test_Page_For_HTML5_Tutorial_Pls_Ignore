@@ -29,7 +29,7 @@ window.addEventListener('load', function() {
 var playGame = function() {
   var board = new Gameboard();
   board.add(new player());
-  board.add(new enemy(enemies.basic, {sprite: 'enemybee'}));
+  board.add(new enemy(enemies.basic, {sprite: 'enemybee', x: 200}));
   board.add(new enemy(enemies.basic));
   Game.setSprite(2, board);
   Game.setSprite(1, new TitleScreen("Alien Invasion", "Started"));
