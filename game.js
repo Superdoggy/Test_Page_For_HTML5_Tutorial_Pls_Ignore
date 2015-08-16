@@ -79,6 +79,7 @@ playermissile.prototype.draw = function(canvascontext) {
   Sprites.draw('missile', this.x, this.y);
 }
 playermissile.prototype.type = Playerprojectiletype;
+
 var enemy = function(blueprint, override) {
   var base = {A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0};
   for (var property in base) {
@@ -95,6 +96,19 @@ var enemy = function(blueprint, override) {
   this.w = Sprites.map[this.sprite].w;
   this.h = Sprites.map[this.sprite].h;
   this.time = 0;
+}
+enemy.prototype.step = function(dtime) {
+  this.time += dtime;
+  this.vx = this.A + this.B * Math.sin(this.C * this.time + this.D);
+  this.vy = this.E + this.F * Math.sin(this.G * this.time + this.H);
+  this.x += this.vx * dtime;
+  this.y += this.vy * dtime;
+  if (this.y > Game.height) {
+    this.board.removeSelect(this);
+  }
+}
+enemy.prototype.draw = function(canvascontext) {
+  Sprites.draw(this.sprite, this.x, this.y);
 }
 
 
