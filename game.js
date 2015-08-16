@@ -9,8 +9,15 @@ var Enemyprojectiletype = 8;
 var Poweruptype = 16;
 var sprites = {
   player: {sx: 0, sy: 0, w: 37, h: 42},
-  missile: {sx: 0, sy: 30, w: 2, h: 10}
+  missile: {sx: 0, sy: 30, w: 2, h: 10},
+  enemy-purple: {sx: 37, sy: 0, w: 42, h: 43},
+  enemy-bee: {sx: 79, sy: 0, w: 37, h: 43},
+  enemy-ship: {sx: 116, sy: 0, w: 42, h: 43},
+  enemy-circle: {sx: 158, sy: 0, w: 32, h: 33}
 };
+var enemies = {
+  basic: {x: 100, y: -50, sprite: 'enemy-purple', B: 100, C: 2, E: 100}
+}
 var gameStart = function() {
   Starfield.initialize();
   Game.setSprite(0, Starfield);
@@ -22,6 +29,8 @@ window.addEventListener('load', function() {
 var playGame = function() {
   var board = new Gameboard();
   board.add(new player());
+  board.add(new enemy(enemies.basic, {sprite: 'enemy-bee'}));
+  board.add(new enemy(enemies.basic));
   Game.setSprite(2, board);
   Game.setSprite(1, new TitleScreen("Alien Invasion", "Started"));
 }
