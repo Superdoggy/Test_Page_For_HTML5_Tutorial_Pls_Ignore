@@ -197,6 +197,24 @@ var Gameboard = function() {
     });
   }
 }
+var Sprite = function() { };
+Sprite.prototype.setup = function(sprite, properties) {
+  this.sprite = sprite;
+  this.merge(properties);
+  this.frame = frame || 0;
+  this.w = Sprites.map[sprite].w;
+  this.h = Sprites.map[sprite].h;
+}
+Sprite.prototype.merge = function(properties) {
+  if(properties) {
+    for (var property in properties) {
+      this[property] = properties[property];
+    }
+  }
+}
+Sprite.prototype.draw = function(canvascontext) { //lol I don't even use the canvascontext xD
+  Sprites.draw(this.sprite, this.x, this.y, this.frame);
+}
 
 
 
